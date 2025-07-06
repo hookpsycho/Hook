@@ -14,7 +14,7 @@ hookfunction(Instance.new('RemoteFunction').InvokeServer, ...)
 ```  
 instead of the usual  
 ```lua
-remoteFunction:InvokeServer(...)
+RemoteFunction:InvokeServer(...)
 ```
 In other words, **any** usage of `RemoteFunction:InvokeServer` can be intercepted, even when invoked in a less typical manner.
 
@@ -82,7 +82,7 @@ When a script calls `SomeRemoteEvent:FireServer("Hello", 123)` or `someRemoteFun
 
 This library also captures less common calls like:
 ```lua
-Instance.new('RemoteFunction').InvokeServer(remoteFunction, "xyz", 789)
+Instance.new('RemoteFunction').InvokeServer(RemoteFunction, "xyz", 789)
 ```
 so you can reliably intercept *any* usage pattern of `RemoteFunction`.
 
